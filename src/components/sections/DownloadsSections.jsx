@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import useReveal from '../../hooks/useReveal'
 import useStaggerReveal from '../../hooks/useStaggerReveal'
+import { Glow } from '../ui/Glow'
 
 export default function DownloadsSection() {
   const cardRef = useRef(null)
@@ -96,9 +97,10 @@ function ContactButton() {
   return (
     <a
       href="mailto:ales.krejzl@gmail.com"
-      className="inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/10"
+      className="inline-flex items-center justify-center gap-3 rounded-lg border border-slate-900 bg-black px-4 py-2 text-sm font-semibold hover:text-slate-900 transition hover:border-white/25 hover:bg-slate-100"
     >
-      Contact
+      <img src="/email.svg" alt="gmail" className="h-8 w-8"/>
+      Contact Me
     </a>
   )
 }
@@ -110,14 +112,5 @@ function Disclaimer() {
       It does not provide medical diagnosis and does not replace professional
       medical advice.
     </p>
-  )
-}
-
-function Glow() {
-  return (
-    <div className="pointer-events-none absolute inset-0">
-      <div className="absolute left-1/2 top-0 h-40 w-40 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl" />
-      <div className="absolute bottom-0 right-0 h-60 w-60 rounded-full bg-blue-500/20 blur-3xl" />
-    </div>
   )
 }

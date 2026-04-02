@@ -1,66 +1,73 @@
-import { useRef } from 'react'
-import useReveal from '../../hooks/useReveal'
-import useStaggerReveal from '../../hooks/useStaggerReveal'
+import { useRef } from "react";
+import useReveal from "../../hooks/useReveal";
+import useStaggerReveal from "../../hooks/useStaggerReveal";
 
 const faqs = [
   {
-    question: 'What can I track in MeteoMind?',
+    question: "What can I track in MeteoMind?",
     answer:
-      'You can log symptoms like migraine, headache, joint pain, nausea, dizziness, and fatigue together with intensity, notes, and pressure-related context.',
+      "You can log symptoms like migraine, headache, joint pain, nausea, dizziness, and fatigue together with intensity, notes, and pressure-related context.",
   },
   {
-    question: 'How do predictions work?',
+    question: "How do predictions work?",
     answer:
-      'MeteoMind compares your symptom history with current pressure, recent pressure changes, and upcoming forecast trends to estimate which symptoms may become more likely.',
+      "MeteoMind compares your symptom history with current pressure, recent pressure changes, and upcoming forecast trends to estimate which symptoms may become more likely.",
   },
   {
-    question: 'What is the difference between current risk and forecast risk?',
+    question: "What is the difference between current risk and forecast risk?",
     answer:
-      'Current risk reflects what the atmospheric pressure is doing right now. Forecast risk looks ahead and estimates how upcoming pressure changes in the next hours may affect you.',
+      "Current risk reflects what the atmospheric pressure is doing right now. Forecast risk looks ahead and estimates how upcoming pressure changes in the next hours may affect you.",
   },
   {
-    question: 'Why does the app use location?',
+    question: "Why does the app use location?",
     answer:
-      'Location is used to fetch accurate local weather and pressure data, so your charts, trends, and predictions match the place where you are.',
+      "Location is used to fetch accurate local weather and pressure data, so your charts, trends, and predictions match the place where you are.",
   },
   {
-    question: 'Does MeteoMind learn from my history?',
+    question: "Does MeteoMind learn from my history?",
     answer:
-      'Yes. As you save more symptom entries, the app can detect personal pressure patterns and use them to improve insights and symptom predictions.',
+      "Yes. As you save more symptom entries, the app can detect personal pressure patterns and use them to improve insights and symptom predictions.",
   },
   {
-    question: 'Can I view my symptom history?',
+    question: "Can I view my symptom history?",
     answer:
-      'Yes. You can browse past entries, pressure changes, symptom intensity, notes, and visual charts that help you spot patterns over time.',
+      "Yes. You can browse past entries, pressure changes, symptom intensity, notes, and visual charts that help you spot patterns over time.",
   },
   {
-    question: 'Can I export my data?',
+    question: "Can I export my data?",
     answer:
-      'Yes. MeteoMind supports CSV export so you can keep or analyze your history outside the app.',
+      "Yes. MeteoMind supports CSV export so you can keep or analyze your history outside the app.",
   },
   {
-    question: 'Is my data private?',
+    question: "Is my data private?",
     answer:
-      'Yes. Your data is securely stored and used only to provide personal insights and predictions within the app.',
-  }
-]
+      "Yes. Your data is securely stored and used only to provide personal insights and predictions within the app.",
+  },
+];
 
 export default function FaqSection() {
-  const headerRef = useRef(null)
-  const listRef = useRef(null)
+  const headerRef = useRef(null);
+  const listRef = useRef(null);
 
-  useReveal(headerRef)
+  useReveal(headerRef);
   useStaggerReveal(listRef, {
     y: 40,
     duration: 1.2,
     stagger: 0.3,
-    start: 'top 60%',
-  })
+    start: "top 60%",
+  });
 
   return (
     <section id="faq" className="py-20">
       <div ref={headerRef}>
-        <SectionHeader />
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300">
+            FAQ
+          </p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            Common questions
+          </h2>
+        </div>
       </div>
 
       <div ref={listRef} className="mx-auto mt-12 grid max-w-4xl gap-4">
@@ -73,21 +80,9 @@ export default function FaqSection() {
         ))}
       </div>
     </section>
-  )
+  );
 }
 
-function SectionHeader() {
-  return (
-    <div className="mx-auto max-w-3xl text-center">
-      <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300">
-        FAQ
-      </p>
-      <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-        Common questions
-      </h2>
-    </div>
-  )
-}
 
 function FaqItem({ question, answer }) {
   return (
@@ -103,5 +98,5 @@ function FaqItem({ question, answer }) {
 
       <p className="mt-4 pr-8 text-sm leading-7 text-slate-300">{answer}</p>
     </details>
-  )
+  );
 }

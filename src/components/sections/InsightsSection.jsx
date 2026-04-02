@@ -38,7 +38,8 @@ export default function InsightsSection() {
           ref={leftCardRef}
           className="rounded-4xl border border-cyan-400/15 bg-linear-to-br from-cyan-400/10 via-blue-500/10 to-indigo-500/10 p-8"
         >
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300">
+          <div className="absolute left-[80%] bottom-0 h-24 w-24 -translate-x-1/2 rounded-full bg-indigo-400/15 blur-3xl" />
+          <p className="text-sm font-medium uppercase tracking-widest text-cyan-300">
             Why it matters
           </p>
 
@@ -66,9 +67,13 @@ export default function InsightsSection() {
 
         <article
           ref={rightCardRef}
-          className="rounded-4xl border border-white/10 bg-white/5 p-8"
+          className="relative rounded-4xl border border-white/10 bg-white/5 p-8"
         >
+          <div className="absolute left-[90%] bottom-64 h-14 w-14 -translate-x-1/2 rounded-full bg-fuchsia-400/90 blur-3xl" />
+          <div className="absolute left-40 top-5 h-44 w-44 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
+          <div className="absolute left-30 bottom-10 h-52 w-52 -translate-x-1/2 rounded-full bg-indigo-400/20 blur-3xl" />
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300">
+            <div className="absolute top-10 bottom-32 h-14 w-14 -translate-x-1/2 rounded-full bg-cyan-400 blur-3xl" />
             Personal insights
           </p>
 
