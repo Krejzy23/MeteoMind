@@ -1,22 +1,22 @@
 export const steps = [
   {
-    title: "Log symptoms",
+    title: "Log your symptoms",
     description:
-      "Record how you feel and build a clear symptom history over time.",
+      "Quickly record how you feel and build a consistent symptom history over time.",
   },
   {
-    title: "Track pressure & forecast",
+    title: "Track pressure changes",
     description:
-      "Follow current atmospheric pressure, upcoming pressure trends, and 7-day weather forecast.",
+      "Monitor current pressure, upcoming trends, and 7-day weather forecast in one place.",
   },
   {
-    title: "Discover personal triggers",
+    title: "Identify your triggers",
     description:
-      "Compare symptoms with pressure values and 3h, 6h, and 12h pressure deltas.",
+      "See how your symptoms relate to pressure levels and rapid changes across 3h, 6h, and 12h intervals.",
   },
   {
-    title: "Prepare earlier",
+    title: "Stay one step ahead",
     description:
-      "Use general and symptom-specific risk insights to plan for difficult days.",
+      "Use personalized risk insights to prepare for days when symptoms are more likely to occur.",
   },
-];
+]

@@ -1,35 +1,37 @@
-import { useRef } from 'react'
-import { StepCard } from '../ui/StepCard'
-import { steps } from '../../data/steps'
-import useReveal from '../../hooks/useReveal'
-import useStaggerReveal from '../../hooks/useStaggerReveal'
+import { useRef } from "react";
+import { StepCard } from "../ui/StepCard";
+import { steps } from "../../data/steps";
+import useReveal from "../../hooks/useReveal";
+import useStaggerReveal from "../../hooks/useStaggerReveal";
 
 export default function HowItWorksSection() {
-  const textRef = useRef(null)
-  const imagesRef = useRef(null)
-  const stepsRef = useRef(null)
+  const textRef = useRef(null);
+  const imagesRef = useRef(null);
+  const stepsRef = useRef(null);
 
-  useReveal(textRef)
+  useReveal(textRef);
   useStaggerReveal(imagesRef, {
     stagger: 0.18,
     y: 40,
     duration: 0.8,
-  })
-  
+  });
+
   useStaggerReveal(stepsRef, {
     stagger: 0.24,
     y: 80,
     duration: 1.2,
-  })
+  });
 
   return (
     <section id="how-it-works" className="py-20">
       <div className="grid gap-12 lg:grid-cols-[1.3fr_0.7fr] lg:items-start">
         <LeftContent textRef={textRef} imagesRef={imagesRef} />
-        <StepsList stepsRef={stepsRef} />
+        <div className="mt-16">
+          <StepsList stepsRef={stepsRef} />
+        </div>
       </div>
     </section>
-  )
+  );
 }
 
 function LeftContent({ textRef, imagesRef }) {
@@ -41,13 +43,14 @@ function LeftContent({ textRef, imagesRef }) {
         </p>
 
         <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          Simple tracking. Smarter insights.
+          Track your body. Understand patterns. <br /> Stay ahead.
         </h2>
 
         <p className="mt-4 text-lg leading-8 text-slate-300">
-          MeteoMind combines your symptom history with current atmospheric
-          pressure, forecasted pressure, and pressure movement over time to
-          surface patterns that are easy to miss in everyday life.
+          MeteoMind connects your symptom history with atmospheric pressure and
+          forecast trends. By combining your data with real-time and upcoming
+          conditions, it helps you uncover patterns and anticipate how your body
+          may react.
         </p>
       </div>
 
@@ -64,7 +67,7 @@ function LeftContent({ textRef, imagesRef }) {
         />
       </div>
     </div>
-  )
+  );
 }
 
 function StepsList({ stepsRef }) {
@@ -79,5 +82,5 @@ function StepsList({ stepsRef }) {
         />
       ))}
     </div>
-  )
+  );
 }

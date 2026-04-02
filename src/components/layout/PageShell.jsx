@@ -12,7 +12,10 @@ export default function PageShell({ children }) {
   function Background() {
     return (
       <div className="absolute inset-0">
+        <div className="absolute w-40 h-40 bg-fuchsia-500/30 blur-3xl" />
         <div className="absolute w-80 h-80 bg-cyan-500/20 blur-3xl" />
+        <div className="absolute w-40 h-40 bottom-64 left-6 lg:bottom-40 lg:left-24  bg-indigo-500/30 blur-3xl"/>
       </div>
+
     )
   }

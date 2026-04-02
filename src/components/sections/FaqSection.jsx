@@ -6,23 +6,43 @@ const faqs = [
   {
     question: 'What can I track in MeteoMind?',
     answer:
-      'You can track symptoms such as migraine, headache, nausea, dizziness, joint pain, fatigue, and more.',
+      'You can log symptoms like migraine, headache, joint pain, nausea, dizziness, and fatigue together with intensity, notes, and pressure-related context.',
   },
   {
-    question: 'How does MeteoMind estimate risk?',
+    question: 'How do predictions work?',
     answer:
-      'The app evaluates current atmospheric pressure, forecasted pressure, pressure change speed, and your own symptom history.',
+      'MeteoMind compares your symptom history with current pressure, recent pressure changes, and upcoming forecast trends to estimate which symptoms may become more likely.',
+  },
+  {
+    question: 'What is the difference between current risk and forecast risk?',
+    answer:
+      'Current risk reflects what the atmospheric pressure is doing right now. Forecast risk looks ahead and estimates how upcoming pressure changes in the next hours may affect you.',
   },
   {
     question: 'Why does the app use location?',
     answer:
-      'Location helps provide more accurate local pressure readings and weather forecast data.',
+      'Location is used to fetch accurate local weather and pressure data, so your charts, trends, and predictions match the place where you are.',
+  },
+  {
+    question: 'Does MeteoMind learn from my history?',
+    answer:
+      'Yes. As you save more symptom entries, the app can detect personal pressure patterns and use them to improve insights and symptom predictions.',
+  },
+  {
+    question: 'Can I view my symptom history?',
+    answer:
+      'Yes. You can browse past entries, pressure changes, symptom intensity, notes, and visual charts that help you spot patterns over time.',
   },
   {
     question: 'Can I export my data?',
     answer:
       'Yes. MeteoMind supports CSV export so you can keep or analyze your history outside the app.',
   },
+  {
+    question: 'Is my data private?',
+    answer:
+      'Yes. Your data is securely stored and used only to provide personal insights and predictions within the app.',
+  }
 ]
 
 export default function FaqSection() {
@@ -31,7 +51,7 @@ export default function FaqSection() {
 
   useReveal(headerRef)
   useStaggerReveal(listRef, {
-    y: 24,
+    y: 40,
     duration: 1.2,
     stagger: 0.3,
     start: 'top 60%',

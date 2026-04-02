@@ -1,20 +1,20 @@
 const highlights = [
-    {
-      title: 'Current pressure awareness',
-      description:
-        'See atmospheric pressure at your location and understand what is happening right now.',
-    },
-    {
-      title: 'Forecast-based risk',
-      description:
-        'Use upcoming pressure changes and local weather forecast to prepare earlier.',
-    },
-    {
-      title: 'Personal symptom patterns',
-      description:
-        'Reveal how your body reacts to pressure drops, rises, and trend speed over time.',
-    },
-  ]
+  {
+    title: 'Understand current pressure',
+    description:
+      'See real-time atmospheric pressure at your location and understand what your body may be reacting to right now.',
+  },
+  {
+    title: 'Stay ahead with forecast',
+    description:
+      'Follow upcoming pressure changes and weather trends to anticipate how you may feel in the next hours.',
+  },
+  {
+    title: 'Discover your patterns',
+    description:
+      'Learn how your symptoms relate to pressure changes and uncover personal triggers based on your own history.',
+  },
+]
   
   export default function HighlightsSection() {
     return (

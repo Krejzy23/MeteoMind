@@ -7,7 +7,7 @@ export default function SiteHeader() {
     ]
   
     return (
-      <header className="sticky top-0 z-30 mt-4 rounded-2xl border border-white/10 bg-slate-900/70 px-5 py-4 backdrop-blur xl:px-6">
+      <header className="sticky top-0 z-30 rounded-2xl border border-white/10 bg-slate-900/70 px-5 py-4 backdrop-blur xl:px-6">
         <div className="flex items-center justify-between gap-4">
           <Brand />
   
@@ -22,8 +22,9 @@ export default function SiteHeader() {
   function Brand() {
     return (
       <a href="#hero" className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-2xl text-lg font-bold text-slate-950 shadow-lg shadow-cyan-500/20">
-          <img src="/images/logo.png" alt="logo" />
+        <div className="relative flex items-center justify-center rounded-2xl shadow-cyan-500/20">
+          <h2 className="absolute text-base font-extrabold text-slate-950 shadow-lg z-20">AK</h2>
+          <img src="/images/logo.png" alt="logo" className="h-6 w-6" />
         </div>
   
         <div>

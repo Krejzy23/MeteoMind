@@ -5,8 +5,8 @@ import useStaggerReveal from "../../hooks/useStaggerReveal";
 export default function InsightsSection() {
   const pressureSignals = [
     "Current atmospheric pressure",
-    "Forecasted pressure trends",
-    "3h, 6h, and 12h pressure deltas",
+    "Upcoming forecast trends",
+    "Pressure changes across 3h, 6h, and 12h windows",
     "General and symptom-specific risk insights",
   ];
 
@@ -36,22 +36,22 @@ export default function InsightsSection() {
       <div className="grid gap-8 lg:grid-cols-2">
         <article
           ref={leftCardRef}
-          className="rounded-[2rem] border border-cyan-400/15 bg-gradient-to-br from-cyan-400/10 via-blue-500/10 to-indigo-500/10 p-8"
+          className="rounded-4xl border border-cyan-400/15 bg-linear-to-br from-cyan-400/10 via-blue-500/10 to-indigo-500/10 p-8"
         >
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300">
             Why it matters
           </p>
 
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Not just pressure. Pressure change.
+            It’s not only the pressure. It’s how it changes.
           </h2>
 
           <p className="mt-4 text-base leading-8 text-slate-200">
-            MeteoMind is built on the idea that symptoms may be triggered not
-            only by a specific pressure value, but also by how quickly pressure
-            rises or falls. That is why the app evaluates current pressure,
-            forecasted pressure, and pressure deltas across 3h, 6h, and 12h
-            windows.
+            MeteoMind helps you understand that symptoms may be linked not only
+            to a specific pressure value, but also to how quickly pressure rises
+            or falls. By combining current conditions, forecast data, and
+            pressure changes over time, the app helps surface patterns that are
+            easy to miss in everyday life.
           </p>
 
           <ul className="mt-6 space-y-3 text-sm text-slate-100">
@@ -66,30 +66,30 @@ export default function InsightsSection() {
 
         <article
           ref={rightCardRef}
-          className="rounded-[2rem] border border-white/10 bg-white/5 p-8"
+          className="rounded-4xl border border-white/10 bg-white/5 p-8"
         >
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300">
-            Transparency
+            Personal insights
           </p>
 
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Built around your personal patterns
+            Built around your own symptom history
           </h2>
 
           <p className="mt-4 text-base leading-8 text-slate-300">
-            Your body may react differently than someone else’s. MeteoMind
-            focuses on your own symptom history to detect possible triggers and
-            improve future risk estimation over time.
+            Your body can react differently than someone else’s. MeteoMind uses
+            your own entries to identify personal patterns, improve risk
+            insights, and make symptom predictions more useful over time.
           </p>
 
           <div ref={infoBlocksRef} className="mt-8 grid gap-4 sm:grid-cols-2">
             <InfoBlock
-              title="Location-based accuracy"
-              description="Your location is used to provide more accurate local pressure readings and weather forecast data."
+              title="Location-based data"
+              description="Your location is used to provide accurate local pressure readings and weather forecasts for your area."
             />
             <InfoBlock
-              title="History & export"
-              description="Review symptom history, inspect charts, and export your data to CSV whenever you need it."
+              title="History and export"
+              description="Review past entries, explore charts, and export your symptom history to CSV whenever you need it."
             />
           </div>
         </article>

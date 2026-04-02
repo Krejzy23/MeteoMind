@@ -16,10 +16,10 @@ export default function useDirectionalReveal(ref, config = {}) {
       opacity = 0,
       duration = 0.8,
       ease = 'power3.out',
-      start = 'top 85%',
+      start = 'top 60%',
       once = true,
       delay = 0,
-      scale = 1,
+      scale = 0,
     } = config
 
     const ctx = gsap.context(() => {
