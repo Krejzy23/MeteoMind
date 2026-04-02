@@ -14,12 +14,20 @@ function HeroSection() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      const actionItems = actionsRef.current
+        ? Array.from(actionsRef.current.children)
+        : []
+  
+      const statItems = statsRef.current
+        ? Array.from(statsRef.current.children)
+        : []
+  
       const tl = gsap.timeline({
         defaults: {
           ease: 'power3.out',
         },
       })
-
+  
       tl.from(badgeRef.current, {
         y: 20,
         opacity: 0,
@@ -53,22 +61,24 @@ function HeroSection() {
           '-=0.3'
         )
         .from(
-          actionsRef.current?.children,
+          actionItems,
           {
             y: 20,
             opacity: 0,
             duration: 0.5,
             stagger: 0.12,
+            clearProps: 'all',
           },
           '-=0.25'
         )
         .from(
-          statsRef.current?.children,
+          statItems,
           {
             y: 24,
             opacity: 0,
             duration: 0.5,
             stagger: 0.1,
+            clearProps: 'all',
           },
           '-=0.2'
         )
@@ -82,7 +92,7 @@ function HeroSection() {
           },
           '-=0.8'
         )
-
+  
       gsap.to(videoRef.current, {
         y: -8,
         duration: 2.8,
@@ -91,7 +101,7 @@ function HeroSection() {
         ease: 'sine.inOut',
       })
     }, sectionRef)
-
+  
     return () => ctx.revert()
   }, [])
 

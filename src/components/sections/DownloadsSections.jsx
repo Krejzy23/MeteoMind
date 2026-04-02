@@ -1,19 +1,47 @@
+import { useRef } from 'react'
+import useReveal from '../../hooks/useReveal'
+import useStaggerReveal from '../../hooks/useStaggerReveal'
+
 export default function DownloadsSection() {
+  const cardRef = useRef(null)
+  const headerRef = useRef(null)
+  const actionsRef = useRef(null)
+  const disclaimerRef = useRef(null)
+
+  useReveal(cardRef)
+  useReveal(headerRef)
+  useStaggerReveal(actionsRef, {
+    y: 40,
+    duration: 1,
+    stagger: 0.2,
+    start: 'top 60%',
+  })
+  useReveal(disclaimerRef)
+
   return (
     <section id="download" className="py-20">
-      <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-linear-to-br from-white/10 to-white/5 p-8 text-center backdrop-blur sm:p-12">
+      <div
+        ref={cardRef}
+        className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-8 text-center backdrop-blur sm:p-12"
+      >
         <Glow />
 
         <div className="relative">
-          <SectionHeader />
+          <div ref={headerRef}>
+            <SectionHeader />
+          </div>
 
-          <DownloadActions />
+          <div ref={actionsRef}>
+            <DownloadActions />
+          </div>
 
-          <Disclaimer />
+          <div ref={disclaimerRef}>
+            <Disclaimer />
+          </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 function SectionHeader() {
@@ -32,7 +60,7 @@ function SectionHeader() {
         with more confidence.
       </p>
     </>
-  );
+  )
 }
 
 function DownloadActions() {
@@ -41,7 +69,7 @@ function DownloadActions() {
       <GooglePlayButton />
       <ContactButton />
     </div>
-  );
+  )
 }
 
 function GooglePlayButton() {
@@ -54,7 +82,7 @@ function GooglePlayButton() {
     >
       <span>Get it on Google Play</span>
     </a>
-  );
+  )
 }
 
 function ContactButton() {
@@ -65,7 +93,7 @@ function ContactButton() {
     >
       Contact
     </a>
-  );
+  )
 }
 
 function Disclaimer() {
@@ -75,7 +103,7 @@ function Disclaimer() {
       It does not provide medical diagnosis and does not replace professional
       medical advice.
     </p>
-  );
+  )
 }
 
 function Glow() {
@@ -84,5 +112,5 @@ function Glow() {
       <div className="absolute left-1/2 top-0 h-40 w-40 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl" />
       <div className="absolute bottom-0 right-0 h-60 w-60 rounded-full bg-blue-500/20 blur-3xl" />
     </div>
-  );
+  )
 }
